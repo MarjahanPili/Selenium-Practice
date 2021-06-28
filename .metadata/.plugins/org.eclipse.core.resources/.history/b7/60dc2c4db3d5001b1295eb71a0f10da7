@@ -1,0 +1,33 @@
+package BasicOperation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class Dropdown_RadioButton_Checkbox {
+	
+	public static void main(String[] args) throws InterruptedException
+	
+	{
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver(); 
+		driver.get("https://www.nexchar.com/signup");
+		//select metohod use
+		
+		Select dropdown= new Select(driver.findElement(By.id("CategoryId")));
+		
+		dropdown.selectByVisibleText("Cafe and food truck");
+		Thread.sleep(2000);
+		
+		dropdown.selectByValue("3");
+		Thread.sleep(2000);
+		
+		dropdown.selectByIndex(4);
+		
+	}
+
+}
